@@ -15,7 +15,7 @@ import hashlib
 userID = 974
 groupID = 752
 
-# Set the from and to path, this should be from somewhere in your dir, to somewhere else.
+# Set the From and To paths for the content copy.
 pathFrom = '/home/user/test/'
 pathTo = '/home/user/test2/'
 # An example of pathFrom = '/home/user/test/'
