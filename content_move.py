@@ -24,12 +24,12 @@ pathTo = '/home/user/test2/'
 for uploadedFile in os.listdir(pathFrom):
         # Checks if the path exists once we scan through the from dir.
         if os.path.exists(pathTo + uploadedFile):
-                # This section just compares the md5 data to see if the file changed.
-                md5FileFrom = hashlib.sha224(open(pathFrom + uploadedFile).read()).hexdigest()
-                md5FileTo = hashlib.sha224(open(pathTo + uploadedFile).read()).hexdigest()
+                # This section just compares the sha224 data to see if the file changed.
+                sha224From = hashlib.sha224(open(pathFrom + uploadedFile).read()).hexdigest()
+                sha224To = hashlib.sha224(open(pathTo + uploadedFile).read()).hexdigest()
                 
-                if md5FileFrom != md5FileTo:
-                        #Copies the file, then chowns it if the md5 data doesn't match.
+                if sha224From != sha224To:
+                        #Copies the file, then chowns it if the sha224 data doesn't match.
                         shutil.copy(pathFrom + uploadedFile, pathTo + uploadedFile)
                 os.chown(pathTo + uploadedFile, userID, groupID)
 
